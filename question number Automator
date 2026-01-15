@@ -1,0 +1,49 @@
+##### import pyautogui
+import time
+import threading
+import pyautogui
+
+# === SETTINGS ===
+x, y = 764, 929  # coordinates of the input field
+start_delay = 5  # seconds before typing starts
+between_delay = 55  # seconds between each entry
+start_num = 1
+end_num = 100
+
+# === USER PROMPT WITH 5-SECOND TIMEOUT ===
+def get_start_number():
+    global start_num
+    print("⏳ You have 5 seconds to enter a starting number.")
+    print("👉 Or press Enter to continue from default:", start_num)
+
+    def timeout_input():
+        time.sleep(5)
+        print("\n⏩ Time's up! Using default starting number:", start_num)
+
+    t = threading.Thread(target=timeout_input)
+    t.start()
+    try:
+        user_input = input("Start from: ").strip()
+        if user_input.isdigit():
+            start_num = int(user_input)
+            print(f"🔁 Starting from {start_num}")
+        else:
+            print(f"➡️ Using default: {start_num}")
+    except:
+        print("⏩ No input received. Using default.")
+    t.join()
+
+# === MAIN ===
+get_start_number()
+
+print(f"🕔 Switch to the target window – typing starts in {start_delay} seconds…")
+time.sleep(start_delay)
+
+for n in range(start_num, end_num + 1):
+    pyautogui.click(x, y)      # keep focus on input field
+    pyautogui.write(str(n))    # type number
+    pyautogui.press('enter')   # press enter
+    print(f"✅ Entered number: {n}")
+    time.sleep(between_delay)
+
+print("🎉 Done!")
