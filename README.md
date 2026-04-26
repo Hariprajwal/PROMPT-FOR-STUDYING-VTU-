@@ -1,3 +1,21 @@
+# 🎓 VTU AI Study Assistant: Smart Prompts for Engineering
+
+This repository contains a specialized set of **AI Prompts** designed to help VTU (Visvesvaraya Technological University) students master their syllabus using Gemini or ChatGPT.
+
+## 📚 Supported Subjects & Codes
+* **Computer Vision** (Code: BCS613B)
+* **Software Engineering** (Code: 21CSXX)
+* (Add more here...)
+
+## 🚀 How to Use
+1. Copy the prompt from the `prompts/` folder.
+2. Paste it into Gemini/ChatGPT.
+3. Provide your specific VTU Module or Question Paper PDF.
+4. Get structured notes, simplified explanations, and solved problems.
+
+## ✨ Why use these prompts?
+Unlike generic study prompts, these are optimized for the **VTU Scheme** to ensure the AI focuses on relevant topics for the final exams.
+
 # PROMPT-FOR-STUDYING-VTU-
 This is a prompt when u paste the prompt u can study effectively example images below of working of propmt 
 <img width="1574" height="637" alt="image" src="https://github.com/user-attachments/assets/3f8227f4-8eab-4829-a508-5af696ac685c" />
